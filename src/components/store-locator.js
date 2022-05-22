@@ -39,6 +39,7 @@ class StoreLocator extends Component {
 
     stores: [],
     filters: [],
+    mapId: '',
 
     searchHint: '',
     searchRadius: 30,
@@ -103,7 +104,8 @@ class StoreLocator extends Component {
       searchLocation: null,
       searchRadius: props.searchRadius,
       showStoreDistance: props.showStoreDistance,
-      stores: props.stores
+      stores: props.stores,
+      mapId: props.mapId
     };
     this.markers = [];
   }
@@ -535,7 +537,8 @@ class StoreLocator extends Component {
       styles: this.props.mapStyle,
       mapTypeControl: this.props.mapTerrainControl,
       streetViewControl: this.props.mapStreetViewControl,
-      fullscreenControl: false
+      fullscreenControl: false,
+      mapId: this.state.mapId
     });
 
     // initialize Google Maps Geocoder
